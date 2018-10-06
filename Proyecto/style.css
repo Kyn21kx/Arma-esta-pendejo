@@ -13,6 +13,7 @@ body{
     left: 0;
     top: 0;
     right: 0;
+    height: 100px;
 }
 .containers{
     display: flex;
@@ -28,16 +29,23 @@ li{
 }
 a{
     display: block;
-    padding: 0.5rem 1rem; 
+    padding: 0.5rem 1rem;
     transition: all 0.4s linear;
     text-decoration: none;
     color: black;
 }
 .logo{
-    padding-left: 75px;
+    padding-left: 125px;
+}
+.logotitulo{
+  position: fixed;
+  top: -20;
+  left: 250;
+  font-size: 48px;
 }
 a:hover{
-    background: rgb(255, 255, 66);
+    background: rgb(158, 71, 24);
+    color: orange;
 }
 .footer{
     align-content: center;
@@ -60,16 +68,18 @@ img{
     width: 75px;
     height: 40px;
     font-size: 16px;
+    border-radius: 10px;
 }
 .boton2{
     background-color: orange;
     margin-top: 30px;
     justify-content: center;
     height:40px;
-    width: 200px; 
+    width: 200px;
     align-content: center;
     margin-left: 238px;
     font-size: 16px;
+    border-radius: 10px;
 }
 .cuadro{
     background: white;
