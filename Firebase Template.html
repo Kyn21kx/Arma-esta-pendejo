@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -23,7 +24,7 @@
         <br />
         <br />
         <!--Selección de ingredientes-->
-        <select>
+        <select id = "Ing1">
             <optgroup label="Default options">
                 <option selected>
                     Ninguno
@@ -52,18 +53,32 @@
                 storageBucket: "chaskasbuilder.appspot.com",
                 messagingSenderId: "1082721458781"
             };
-
             firebase.initializeApp(config);
         var id = 0;
         function SubmitData() {
             var database = firebase.database();
             var reference = database.ref("Orders");
-            
             var textInput = document.getElementById("order");
-            var data = {
-                OrderId: id++,
-                OrderDetails: textInput.value
-            };
+            
+            var ing1 = document.getElementById("Ing1");
+            //#Region
+            //Controla los ingredientes adicionales agregados
+            id++;
+            if(ing1.value != null) {
+                var data = {
+                    OrderId: id.valueOf(),
+                    OrderDetails: textInput.value,
+                    Ing1Details: ing1.value
+                };    
+            }
+            //Si los campos de ingredientes adicionales están vacios
+            else {
+                var data = {
+                    OrderId: id.valueOf(),
+                    OrderDetails: textInput.value
+                };   
+            }
+            //#Endregion
             reference.push(data);
             alert("Orden completada, pase con el número " + id.valueOf());
         }
