@@ -260,8 +260,16 @@
                      };
                      reference.push(data);
                  alert("Orden completada, pase con el número " + (id).toString());
-                 details = null;
+                 Clear();
+             }
+
+             function Clear() {
+                 for (var i = 0; i < ing.length; i++) {
+                     ing[i] = "";
                  }
+                 cnt = 0;
+                 details = "";
+             }
 
          </script>
 
