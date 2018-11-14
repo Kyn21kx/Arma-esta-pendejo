@@ -170,6 +170,7 @@
 
              var ing = [];
              var details = "";
+             var id = 0;
              var cnt = 0;
 
              var config = {
@@ -247,18 +248,19 @@
                      details += " " + ing[i];
                  }
              }
-
+             
              function Submit() {
                  Sum();
-                 var id = 0;
-                     var database = firebase.database();
+                 var database = firebase.database();
+                 id++;
                      var reference = database.ref("Orders");
                      var data = {
-                         OrderId: id++,
+                         OrderId: id,
                          OrderDetails: details
                      };
                      reference.push(data);
-                     alert("Orden completada, pase con el número " + (id -= 1).toString());
+                 alert("Orden completada, pase con el número " + (id).toString());
+                 details = null;
                  }
 
          </script>
