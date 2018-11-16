@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Manager</title>
+</head>
+<body>
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
+    <div>
+        <hr />
+        <center>
+            <font face="Arial" size="48px">Order Manager</font>
+        </center>
+        <hr />
+    </div>
+    <br />
+    <br />
+    <br />
+    <div>
+        <center>
+            <font face="Arial" size="6.5px">Current order</font>
+            <br />
+            <!--Order details-->
+            <br />
+            <button>Override</button> <button>Next order</button>
+        </center>
+    </div>
+    <div>
+        <font face="Arial" size="5px">Pending orders</font>
+        <br />
+        <br />
+        <font face="Arial" size="5px">*</font>
+    </div>
+    <script> 
+        var config = {
+            apiKey: "AIzaSyBnaI6yeu-2qsc5OisguZRd-kBLikHUQI4",
+            authDomain: "chaskasbuilder.firebaseapp.com",
+            databaseURL: "https://chaskasbuilder.firebaseio.com",
+            projectId: "chaskasbuilder",
+            storageBucket: "chaskasbuilder.appspot.com",
+            messagingSenderId: "1082721458781"
+        };
+
+        firebase.initializeApp(config);</script>
+</body>
+</html>

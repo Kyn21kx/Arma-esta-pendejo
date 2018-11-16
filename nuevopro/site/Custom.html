@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Personalizar</title>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-migrate-1.1.1.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/jquery.equalheights.js"></script>
+    <script src="js/superfish.js"></script>
+    <script src="js/jquery.responsivemenu.js"></script>
+    <script src="js/jquery.mobilemenu.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+
+    <!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+      </div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+
+        <link  type="text/css" media="screen" href="css/ie.css">
+    <![endif]-->
+</head>
+     <body>
+         <!--==============================header=================================-->
+         <header>
+             <div class="container_12">
+                 <div class="grid_12">
+                     <h1 class="title">Chaska Builder</h1>
+                     <div class="menu_block">
+                     </div>
+                 </div>
+             </div>
+         </header>
+         <!--=======content================================-->
+         <div class="content">
+             <br>
+             <br>
+             <h2 class="info2">Elige tus ingredientes</h2>
+             <br>
+             <div class="container_12 ">
+                 <div class="grid_9 emp_box">
+                     <div class="pad1">
+
+                         <!--Uncentered: <h2>Elige un tipo de queso</h2>-->
+                         <div class="grid_4 alpha">
+                             <br />
+                             <div class="box" onclick="Add()" id="q1">
+                                 <div class="maxheight1">
+                                    
+                                     <div>
+                                         <p><strong></strong> </p>
+                                         <a draggable="false" class="bbb" id="ing">Manchego</a>
+                                     </div>
+                                 </div>
+                             </div>
+                             <hr />
+                         </div>
+                         <div class="grid_4 alpha1">
+                             <div class="box" onclick="Add1()" id="q2">
+                                 <div class="maxheight1">
+                                     <img src="images/page3_img1.jpg" alt="">
+                                     <div class="extra_wrapper">
+                                         <p><strong></strong> </p>
+                                         <a draggable="false" class="bbb1" id="ing" href="#">Americano</a>
+                                     </div>
+                                 </div>
+                             </div>
+                             <hr />
+                         </div>
+                         <div class="grid_4 alpha2">
+                             <div class="box" onclick="Add2()" id="q3">
+                                 <div class="maxheight1">
+                                     <img src="images/page3_img1.jpg" alt="">
+                                     <div class="extra_wrapper">
+                                         <p><strong></strong> </p>
+                                         <a draggable="false" class="bbb2" id="ing" href="#">Gouda</a>
+                                     </div>
+                                 </div>
+                             </div>
+                             <hr />
+                         </div>
+                         <div class="grid_4 alpha3">
+                             <div class="box" onclick="Add3()" id="q4">
+                                 <div class="maxheight1">
+                                     <img src="images/page3_img1.jpg" alt="">
+                                     <div class="extra_wrapper">
+                                         <p><strong></strong> </p>
+                                         <a draggable="false" class="bbb3" id="ing" href="#">Cheedar</a>
+                                     </div>
+                                 </div>
+                             </div>
+                             <hr />
+                         </div>
+                         <div class="grid_4 alpha4">
+                             <div class="box" onclick="Add4()" id="q5">
+                                 <div class="maxheight1">
+                                     <img src="images/page3_img1.jpg" alt="">
+                                     <div class="extra_wrapper">
+                                         <p><strong></strong> </p>
+                                         <a draggable="false" class="bbb4" id="ing" href="#">Queso rayado</a>
+                                     </div>
+                                 </div>
+                             </div>
+                             <hr />
+                         </div>
+                         <div class="grid_4 alpha5">
+                             <div class="box" onclick="Add5()" id="q6">
+                                 <div class="maxheight1">
+                                     <img src="images/page3_img1.jpg" alt="">
+                                     <div class="extra_wrapper">
+                                         <p><strong></strong> </p>
+                                         <a draggable="false" class="bbb5" id="ing" href="#">Chile</a>
+                                     </div>
+                                 </div>
+                             </div>
+                             <hr />
+                         </div>
+                         <div class="grid_4 alpha6">
+                             <div class="box" onclick="Add6()" id="q7">
+                                 <div class="maxheight1">
+                                     <img src="images/page3_img1.jpg" alt="">
+                                     <div class="extra_wrapper">
+                                         <p><strong></strong> </p>
+                                         <a draggable="false" class="bbb6" id="ing" href="#">Crema</a>
+                                     </div>
+                                 </div>
+                             </div>
+                             <hr />
+                         </div>
+                         <div class="grid_4 alpha7">
+                             <div class="box" onclick="Add7()" id="q8">
+                                 <div class="maxheight1">
+                                     <img src="images/page3_img1.jpg" alt="">
+                                     <div class="extra_wrapper">
+                                         <p><strong></strong> </p>
+                                         <a draggable="false" class="bbb7" id="ing" href="#">Mayonesa</a>
+                                     </div>
+                                 </div>
+                             </div>
+                             <hr />
+                         </div>
+
+                         <div class="clear cl1"></div>
+                         <br>
+                         <div class="moveer">
+
+                             <div class="grid_4 alpha8">
+                         <div class="box" onclick="Submit()">
+                             <div class="maxheight1">
+
+                                 <div class="extra_wrapper">
+                                     <p><strong></strong> </p>
+                                     <a draggable="false" class="bbb8" id="ing" href="#">Ordenar</a>
+                                 </div>
+                             </div>
+                         </div>
+                     </div></div>
+                     <div class="clear"></div>
+                 </div>
+             </div>
+         </div>
+         <!--==============================footer=================================-->
+         <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+         <!--Inicialización de los datos de conexión a la base de datos (Adjuntar al index)-->
+
+         <script>
+
+             var ing = [];
+             var details = "";
+             var id = 0;
+             var cnt = 0;
+
+             var config = {
+                 apiKey: "AIzaSyBnaI6yeu-2qsc5OisguZRd-kBLikHUQI4",
+                 authDomain: "chaskasbuilder.firebaseapp.com",
+                 databaseURL: "https://chaskasbuilder.firebaseio.com",
+                 projectId: "chaskasbuilder",
+                 storageBucket: "chaskasbuilder.appspot.com",
+                 messagingSenderId: "1082721458781"
+             };
+             firebase.initializeApp(config);
+
+
+             var config = {
+                 apiKey: "AIzaSyBnaI6yeu-2qsc5OisguZRd-kBLikHUQI4",
+                 authDomain: "chaskasbuilder.firebaseapp.com",
+                 databaseURL: "https://chaskasbuilder.firebaseio.com",
+                 projectId: "chaskasbuilder",
+                 storageBucket: "chaskasbuilder.appspot.com",
+                 messagingSenderId: "1082721458781"
+             };
+
+             firebase.initializeApp(config);
+
+             function Add() {
+                 ing[cnt] = "Queso manchego";
+                 alert("Added " + ing[cnt] + " to your order");
+                 cnt++;
+             }
+
+             function Add1() {
+                 ing[cnt] = "Queso americano";
+                 alert("Added " + ing[cnt] + " to your order");
+                 cnt++;
+             }
+
+             function Add2() {
+                 ing[cnt] = "Queso gouda";
+                 alert("Added " + ing[cnt] + " to your order");
+                 cnt++;
+             }
+
+             function Add3() {
+                 ing[cnt] = "Queso cheedar";
+                 alert("Added " + ing[cnt] + " to your order");
+                 cnt++;
+             }
+
+             function Add4() {
+                 ing[cnt] = "Queso rayado";
+                 alert("Added " + ing[cnt] + " to your order");
+                 cnt++;
+             }
+
+             function Add5() {
+                 ing[cnt] = "Chile";
+                 alert("Added " + ing[cnt] + " to your order");
+                 cnt++;
+             }
+
+             function Add6() {
+                 ing[cnt] = "Crema";
+                 alert("Added " + ing[cnt] + " to your order");
+                 cnt++;
+             }
+
+             function Add7() {
+                 ing[cnt] = "Mayonesa";
+                 alert("Added " + ing[cnt] + " to your order");
+                 cnt++;
+             }
+
+             function Sum() {
+                 for (var i = 0; i < ing.length; i++) {
+                     details += " " + ing[i];
+                 }
+             }
+
+             function Submit() {
+                 Sum();
+                 var database = firebase.database();
+                 id++;
+                     var reference = database.ref("Orders");
+                     var data = {
+                         OrderId: id,
+                         OrderDetails: details
+                     };
+                     reference.push(data);
+                 alert("Orden completada, pase con el número " + (id).toString());
+                 Clear();
+             }
+
+             function Clear() {
+                 for (var i = 0; i < ing.length; i++) {
+                     ing[i] = "";
+                 }
+                 cnt = 0;
+                 details = "";
+             }
+
+         </script>
+
+         <div class="container_12">
+
+         </div>
+
+     </body>
+</html>
