@@ -33,7 +33,6 @@
          <!--==============================header=================================-->
          <header>
              <div class="container_12">
-                 <a href="index.html"><input type="button" class="regresar" value="Regresar"></a>
                  <div class="grid_12">
                      <h1 class="title">Chaska Builder</h1>
                      <div class="menu_block">
@@ -59,7 +58,7 @@
                                     
                                      <div>
                                          <p><strong></strong> </p>
-                                         <a draggable="false" class="bbb" id="ing">Manchego</a>
+                                         <a draggable="false" class="bbb" id="ing">Manchego +$2.00</a>
                                      </div>
                                  </div>
                              </div>
@@ -71,7 +70,7 @@
                                      <img src="images/page3_img1.jpg" alt="">
                                      <div class="extra_wrapper">
                                          <p><strong></strong> </p>
-                                         <a draggable="false" class="bbb1" id="ing" href="#">Americano</a>
+                                         <a draggable="false" class="bbb1" id="ing" href="#">Americano +$1.50</a>
                                      </div>
                                  </div>
                              </div>
@@ -83,7 +82,7 @@
                                      <img src="images/page3_img1.jpg" alt="">
                                      <div class="extra_wrapper">
                                          <p><strong></strong> </p>
-                                         <a draggable="false" class="bbb2" id="ing" href="#">Gouda</a>
+                                         <a draggable="false" class="bbb2" id="ing" href="#">Gouda +$2.00</a>
                                      </div>
                                  </div>
                              </div>
@@ -95,7 +94,7 @@
                                      <img src="images/page3_img1.jpg" alt="">
                                      <div class="extra_wrapper">
                                          <p><strong></strong> </p>
-                                         <a draggable="false" class="bbb3" id="ing" href="#">Cheedar</a>
+                                         <a draggable="false" class="bbb3" id="ing" href="#">Cheedar +$1.50</a>
                                      </div>
                                  </div>
                              </div>
@@ -107,7 +106,7 @@
                                      <img src="images/page3_img1.jpg" alt="">
                                      <div class="extra_wrapper">
                                          <p><strong></strong> </p>
-                                         <a draggable="false" class="bbb4" id="ing" href="#">Queso rayado</a>
+                                         <a draggable="false" class="bbb4" id="ing" href="#">Queso rayado +$1.50</a>
                                      </div>
                                  </div>
                              </div>
@@ -119,7 +118,7 @@
                                      <img src="images/page3_img1.jpg" alt="">
                                      <div class="extra_wrapper">
                                          <p><strong></strong> </p>
-                                         <a draggable="false" class="bbb5" id="ing" href="#">Chile</a>
+                                         <a draggable="false" class="bbb5" id="ing" href="#">Chile +$1.50</a>
                                      </div>
                                  </div>
                              </div>
@@ -131,7 +130,7 @@
                                      <img src="images/page3_img1.jpg" alt="">
                                      <div class="extra_wrapper">
                                          <p><strong></strong> </p>
-                                         <a draggable="false" class="bbb6" id="ing" href="#">Crema</a>
+                                         <a draggable="false" class="bbb6" id="ing" href="#">Crema +$1.50</a>
                                      </div>
                                  </div>
                              </div>
@@ -143,7 +142,7 @@
                                      <img src="images/page3_img1.jpg" alt="">
                                      <div class="extra_wrapper">
                                          <p><strong></strong> </p>
-                                         <a draggable="false" class="bbb7" id="ing" href="#">Mayonesa</a>
+                                         <a draggable="false" class="bbb7" id="ing" href="#">Mayonesa +$1.50</a>
                                      </div>
                                  </div>
                              </div>
@@ -174,8 +173,9 @@
          <!--Inicialización de los datos de conexión a la base de datos (Adjuntar al index)-->
 
          <script>
-
+             const defPrice = 1.5;
              var ing = [];
+             var price = 15;
              var details = "";
              var id = 0;
              var cnt = 0;
@@ -206,48 +206,56 @@
                  ing[cnt] = "Queso manchego";
                  alert("Added " + ing[cnt] + " to your order");
                  cnt++;
+                 price += (defPrice + 0.5);
              }
 
              function Add1() {
                  ing[cnt] = "Queso americano";
                  alert("Added " + ing[cnt] + " to your order");
                  cnt++;
+                 price += defPrice;
              }
 
              function Add2() {
                  ing[cnt] = "Queso gouda";
                  alert("Added " + ing[cnt] + " to your order");
                  cnt++;
+                 price += (defPrice + 0.5);
              }
 
              function Add3() {
                  ing[cnt] = "Queso cheedar";
                  alert("Added " + ing[cnt] + " to your order");
                  cnt++;
+                 price += defPrice;
              }
 
              function Add4() {
                  ing[cnt] = "Queso rayado";
                  alert("Added " + ing[cnt] + " to your order");
                  cnt++;
+                 price += defPrice;
              }
 
              function Add5() {
                  ing[cnt] = "Chile";
                  alert("Added " + ing[cnt] + " to your order");
                  cnt++;
+                 price += defPrice;
              }
 
              function Add6() {
                  ing[cnt] = "Crema";
                  alert("Added " + ing[cnt] + " to your order");
                  cnt++;
+                 price += defPrice;
              }
 
              function Add7() {
                  ing[cnt] = "Mayonesa";
                  alert("Added " + ing[cnt] + " to your order");
                  cnt++;
+                 price += defPrice;
              }
 
              function Sum() {
@@ -263,10 +271,11 @@
                      var reference = database.ref("Orders");
                      var data = {
                          OrderId: id,
-                         OrderDetails: details
+                         OrderDetails: details,
+                         Total: price
                      };
-                     reference.push(data);
-                 alert("Orden completada, pase con el número " + (id).toString());
+                 reference.push(data);
+                 alert("Orden completada, precio: " + price + ". Pase con el número " + (id).toString());
                  Clear();
              }
 
@@ -276,6 +285,7 @@
                  }
                  cnt = 0;
                  details = "";
+                 price = 15;
              }
 
          </script>
